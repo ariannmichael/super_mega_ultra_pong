@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://330qm8e6n276"]
+
+[ext_resource type="Script" uid="uid://barnycsi8ph6t" path="res://scenes/managers/level_manager.gd" id="1_dypyr"]
+[ext_resource type="PackedScene" uid="uid://cnd0sxcb641k4" path="res://scenes/arenas/arena_1.tscn" id="2_fvk4w"]
+
+[node name="LevelManager" type="Node"]
+script = ExtResource("1_dypyr")
+level_scenes = Array[PackedScene]([ExtResource("2_fvk4w")])
