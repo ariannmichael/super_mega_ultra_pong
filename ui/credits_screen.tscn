@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq3y2c7l5g4oy"]
+
+[ext_resource type="Script" uid="uid://ed86qrryqk0e" path="res://ui/move_container.gd" id="1_3edf7"]
+[ext_resource type="Theme" uid="uid://bxs6rhi7i4gl6" path="res://resources/new_theme.tres" id="2_ygnrc"]
+[ext_resource type="Script" uid="uid://cc44xj70dc81y" path="res://ui/back_button.gd" id="3_ygnrc"]
+
+[sub_resource type="Gradient" id="Gradient_1a2ex"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qy8g3"]
+gradient = SubResource("Gradient_1a2ex")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_qy8g3")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" node_paths=PackedStringArray("container")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 15.0
+offset_right = 64.0
+offset_bottom = 79.0
+grow_horizontal = 2
+script = ExtResource("1_3edf7")
+initial_offset = 50.0
+container = NodePath("VBoxContainer/LabelsContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelsContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/LabelsContainer"]
+layout_mode = 2
+theme = ExtResource("2_ygnrc")
+text = "ARIANN MICHAEL"
+
+[node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/LabelsContainer"]
+layout_mode = 2
+theme = ExtResource("2_ygnrc")
+text = "RONALD RODRIGUES"
+
+[node name="Label3" type="Label" parent="Control/MarginContainer/VBoxContainer/LabelsContainer"]
+layout_mode = 2
+theme = ExtResource("2_ygnrc")
+text = "TAIGO LEONHART"
+
+[node name="BackButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 24.0
+offset_bottom = 29.0
+theme = ExtResource("2_ygnrc")
+text = "<"
+script = ExtResource("3_ygnrc")
+
+[connection signal="pressed" from="Control/BackButton" to="Control/BackButton" method="_on_pressed"]

@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bxs6rhi7i4gl6"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bxs6rhi7i4gl6"]
 
 [ext_resource type="FontFile" uid="uid://6xrxape4cn4m" path="res://resources/BitPotion.ttf" id="1_2a54a"]
+[ext_resource type="FontFile" uid="uid://clhsaulml4o3b" path="res://resources/BitPotion_outline.ttf" id="2_121kx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3ra7"]
 bg_color = Color(0.431373, 0.431373, 0.431373, 0.517647)
@@ -29,3 +30,4 @@ Button/fonts/font = ExtResource("1_2a54a")
 Button/styles/hover = SubResource("StyleBoxFlat_d3ra7")
 Button/styles/normal = SubResource("StyleBoxFlat_2a54a")
 Button/styles/pressed = SubResource("StyleBoxFlat_121kx")
+Label/fonts/font = ExtResource("2_121kx")
