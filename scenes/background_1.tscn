@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0w4pumdi8ixr"]
+
+[ext_resource type="Texture2D" uid="uid://dq8kry7nmbw5g" path="res://assets/backgrounds/u4451379172_a_beautifull_forest_with_a_lot_of_vegetation_and__de1aa759-98aa-451e-9aa5-37aba64617da_3.png" id="1_ddhl4"]
+
+[node name="Background1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ddhl4")

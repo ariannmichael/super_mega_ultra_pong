@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyn8tajqd5i5p"]
+
+[ext_resource type="PackedScene" uid="uid://c0w4pumdi8ixr" path="res://scenes/background_1.tscn" id="1_4q8x3"]
+[ext_resource type="PackedScene" uid="uid://dtkbtsao13egn" path="res://scenes/characters/slime.tscn" id="1_fivl7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lali3"]
+size = Vector2(1005.5, 54)
+
+[node name="Arena1" type="Node2D"]
+
+[node name="Background1" parent="." instance=ExtResource("1_4q8x3")]
+
+[node name="Slime" parent="." instance=ExtResource("1_fivl7")]
+position = Vector2(177, 474)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(532, 623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(9, -1)
+shape = SubResource("RectangleShape2D_lali3")
