@@ -8,7 +8,7 @@ func _on_button_start_pressed() -> void:
 
 
 func _on_button_options_pressed() -> void:
-	pass # Replace with function body.
+	$"/root/LevelManager".change_level(3)
 
 
 func _on_button_credits_pressed() -> void:

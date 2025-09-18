@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://330qm8e6n276"]
+[gd_scene load_steps=6 format=3 uid="uid://330qm8e6n276"]
 
 [ext_resource type="Script" uid="uid://barnycsi8ph6t" path="res://scenes/managers/level_manager.gd" id="1_dypyr"]
 [ext_resource type="PackedScene" uid="uid://c1067hdlwhqmt" path="res://ui/title_screen.tscn" id="2_gtxch"]
 [ext_resource type="PackedScene" uid="uid://cyn8tajqd5i5p" path="res://scenes/arenas/arena1.tscn" id="3_n8pga"]
 [ext_resource type="PackedScene" uid="uid://dq3y2c7l5g4oy" path="res://ui/credits_screen.tscn" id="4_n8pga"]
+[ext_resource type="PackedScene" uid="uid://dyystxtr24js" path="res://ui/options_menu.tscn" id="5_gubks"]
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_dypyr")
-level_scenes = Array[PackedScene]([ExtResource("2_gtxch"), ExtResource("3_n8pga"), ExtResource("4_n8pga")])
+level_scenes = Array[PackedScene]([ExtResource("2_gtxch"), ExtResource("3_n8pga"), ExtResource("4_n8pga"), ExtResource("5_gubks")])

@@ -26,6 +26,8 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [resource]
+AcceptDialog/font_sizes/title_font_size = 32
+AcceptDialog/fonts/title_font = ExtResource("2_121kx")
 Button/fonts/font = ExtResource("1_2a54a")
 Button/styles/hover = SubResource("StyleBoxFlat_d3ra7")
 Button/styles/normal = SubResource("StyleBoxFlat_2a54a")

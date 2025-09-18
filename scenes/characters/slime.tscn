@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://dtkbtsao13egn"]
 
-[ext_resource type="Script" uid="uid://d1lk3rltrqjlo" path="res://characters/slime.gd" id="1_k84ui"]
+[ext_resource type="Script" uid="uid://d1lk3rltrqjlo" path="res://scenes/characters/slime.gd" id="1_k84ui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k84ui"]
 size = Vector2(46, 31)
