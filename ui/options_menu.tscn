@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyystxtr24js"]
+[gd_scene load_steps=6 format=3 uid="uid://dyystxtr24js"]
 
 [ext_resource type="Script" uid="uid://boywip7yetu3f" path="res://ui/options_menu.gd" id="1_aa3db"]
 [ext_resource type="Theme" uid="uid://bxs6rhi7i4gl6" path="res://resources/new_theme.tres" id="1_ibk6l"]
+[ext_resource type="Script" uid="uid://cc44xj70dc81y" path="res://ui/back_button.gd" id="3_03u0o"]
 
 [sub_resource type="Gradient" id="Gradient_qer0c"]
 offsets = PackedFloat32Array(1)
@@ -109,3 +110,14 @@ size = Vector2i(194, 100)
 theme = ExtResource("1_ibk6l")
 ok_button_text = " OK "
 dialog_text = "Press a key or a button"
+
+[node name="BackButton" type="Button" parent="Control"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 24.0
+offset_bottom = 29.0
+theme = ExtResource("1_ibk6l")
+text = "<"
+script = ExtResource("3_03u0o")
+
+[connection signal="pressed" from="Control/BackButton" to="Control/BackButton" method="_on_pressed"]

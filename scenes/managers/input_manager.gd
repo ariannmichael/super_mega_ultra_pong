@@ -37,7 +37,7 @@ func _ensure_actions_exists(actions: Array) -> void:
 func apply_bindings(bindings: Dictionary) -> void:
 	for action in bindings.keys():
 		InputMap.action_erase_events(action)
-		InputMap.action_add_event(action, bindings[action])
+		InputMap.action_add_event(action, _make_key_event(bindings[action]))
 
 func load_bindings() -> void:
 	var file := ConfigFile.new()
@@ -84,7 +84,7 @@ func reset_to_defaults() -> void:
 	apply_bindings(default_bindings)
 	save_bindings()
 	for action in default_bindings.keys():
-		emit_signal("binding_changed", action, default_bindings[action].as_text())
+		emit_signal("binding_changed", action, str(default_bindings[action]))
 
 func get_action_event_text(action: StringName) -> String:
 	var evs := InputMap.action_get_events(action)
@@ -99,6 +99,15 @@ func execute_if_pressed(actor: Node) -> void:
 			(_commands[action] as Command).execute(actor)
 
 # ----------- HELPERS -----------
+
+func _make_key_event(keycode: int, shift:=false, alt:=false, ctrl:=false, meta:=false) -> InputEventKey:
+	var ev := InputEventKey.new()
+	ev.keycode = keycode
+	ev.shift_pressed = shift
+	ev.alt_pressed = alt
+	ev.ctrl_pressed = ctrl
+	ev.meta_pressed = meta
+	return ev
 
 func _find_conflict_action(target_action: StringName, new_event: InputEvent) -> StringName:
 	for action in default_bindings.keys():

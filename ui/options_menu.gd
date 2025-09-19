@@ -44,20 +44,8 @@ func _build_rows():
 				_cancel_capture(bind_btn)
 		)
 
-		# Optional: Clear button
-		var clear_btn := Button.new()
-		clear_btn.text = "Clear"
-		clear_btn.tooltip_text = "Remove binding for %s" % [String(action).capitalize()]
-		clear_btn.pressed.connect(func():
-			if _capturing and _capturing_action == action:
-				_cancel_capture(_capturing_btn)
-			InputManager.unbind_action(action)
-			_show_message("%s unbound" % [String(action).capitalize()])
-		)
-
 		row.add_child(name_label)
 		row.add_child(bind_btn)
-		row.add_child(clear_btn)
 		list_root.add_child(row)
 
 	# Separator + Reset
