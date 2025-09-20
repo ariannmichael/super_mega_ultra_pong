@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://8brke0m1rcnh"
+path="res://.godot/imported/BouncingBallButton.aseprite-d317a52b735276bc8d14c7c12fa3ee83.res"
+
+[deps]
+
+source_file="res://assets/Bouncing Ball Game Assets/BouncingBallButton.aseprite"
+dest_files=["res://.godot/imported/BouncingBallButton.aseprite-d317a52b735276bc8d14c7c12fa3ee83.res"]
+
+[params]
+

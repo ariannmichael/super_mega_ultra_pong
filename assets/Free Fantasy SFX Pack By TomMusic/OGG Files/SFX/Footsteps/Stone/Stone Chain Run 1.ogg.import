@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ec7p8bp3fgv7"
+path="res://.godot/imported/Stone Chain Run 1.ogg-971416857d7a22ed563cc9353923e7f8.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Footsteps/Stone/Stone Chain Run 1.ogg"
+dest_files=["res://.godot/imported/Stone Chain Run 1.ogg-971416857d7a22ed563cc9353923e7f8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

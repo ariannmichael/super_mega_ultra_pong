@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dxpvxrg2om3lo"
+path="res://.godot/imported/Paddle.aseprite-1f034f6231cf62036fa1872d818e8915.res"
+
+[deps]
+
+source_file="res://assets/Bouncing Ball Game Assets/Paddle.aseprite"
+dest_files=["res://.godot/imported/Paddle.aseprite-1f034f6231cf62036fa1872d818e8915.res"]
+
+[params]
+

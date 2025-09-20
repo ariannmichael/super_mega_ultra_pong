@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dslxgrldqspo3"
+path="res://.godot/imported/Sea Rain.ogg-3841c57ec115f581c1bdc8044177dcbc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/BGS Loops/Sea/Sea Rain.ogg"
+dest_files=["res://.godot/imported/Sea Rain.ogg-3841c57ec115f581c1bdc8044177dcbc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

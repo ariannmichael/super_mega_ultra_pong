@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var attack_area = $Area2D
 @onready var dash_particles = $GPUParticles2D
 var speed = 100
+var ball_force = 200
 var dash_speed = 400
 var attacking = false
 var dashing = false
@@ -14,8 +15,14 @@ var direction: Vector2
 
 
 func _physics_process(delta: float) -> void:
+	normalize_elements_that_follows_player_direction()
 	moveset_animation(delta)
 	InputManager.execute_if_pressed(self)
+
+func normalize_elements_that_follows_player_direction():
+	if direction.x != 0:
+		attack_area.scale.x = direction.x
+		dash_particles.scale.x = direction.normalized().x
 
 func get_animation():
 	if dashing:
@@ -31,12 +38,10 @@ func moveset_animation(_delta: float) -> void:
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
 	if dashing:
-		attack_area.scale.x = direction.x
-		dash_particles.scale.x = direction.x
 		velocity = direction.normalized() * dash_speed
 	else:
 		velocity = direction * speed
-		
+
 	move_and_slide()
 	
 	# Animation logic
@@ -52,7 +57,6 @@ func dash() -> void:
 		$Timer.start(dash_cooldown)
 
 func attack() -> void:
-	attack_area.scale.x = direction.x
 	attacking = true
 	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -69,3 +73,9 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 
 func _on_timer_timeout() -> void:
 	dashing = false
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is RigidBody2D:	
+		body.apply_impulse(attack_area.scale.normalized() * ball_force)
+		

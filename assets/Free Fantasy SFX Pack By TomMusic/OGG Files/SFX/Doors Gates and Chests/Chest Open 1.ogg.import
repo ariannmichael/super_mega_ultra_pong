@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdgcv8c441jtd"
+path="res://.godot/imported/Chest Open 1.ogg-29d29c0e3bfd77c9b4ac96c0a47161f3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Doors Gates and Chests/Chest Open 1.ogg"
+dest_files=["res://.godot/imported/Chest Open 1.ogg-29d29c0e3bfd77c9b4ac96c0a47161f3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

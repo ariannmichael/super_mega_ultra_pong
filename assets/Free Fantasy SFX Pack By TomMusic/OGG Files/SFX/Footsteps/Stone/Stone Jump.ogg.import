@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bf3ymn03ou1dg"
+path="res://.godot/imported/Stone Jump.ogg-f91a752224e91223370ac4eac029349f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Footsteps/Stone/Stone Jump.ogg"
+dest_files=["res://.godot/imported/Stone Jump.ogg-f91a752224e91223370ac4eac029349f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

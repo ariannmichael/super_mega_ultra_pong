@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://caltuur2nguqb"
+path="res://.godot/imported/Spell Impact 1.ogg-06005a9efccb22e87268d0ca6a48dcfb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Spells/Spell Impact 1.ogg"
+dest_files=["res://.godot/imported/Spell Impact 1.ogg-06005a9efccb22e87268d0ca6a48dcfb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
