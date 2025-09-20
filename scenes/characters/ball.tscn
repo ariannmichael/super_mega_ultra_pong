@@ -47,7 +47,6 @@ script = ExtResource("1_aca4o")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_23c7g")
-position = Vector2(-16, -2)
 amount = 50
 texture = ExtResource("2_23c7g")
 lifetime = 0.31
@@ -56,6 +55,5 @@ interpolate = false
 process_material = SubResource("ParticleProcessMaterial_aca4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_aca4o")
 debug_color = Color(0.69625, 0.494444, 0, 0.42)
