@@ -1,21 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyn8tajqd5i5p"]
+[gd_scene load_steps=7 format=3 uid="uid://cyn8tajqd5i5p"]
 
 [ext_resource type="PackedScene" uid="uid://c0w4pumdi8ixr" path="res://scenes/background_1.tscn" id="1_4q8x3"]
 [ext_resource type="PackedScene" uid="uid://dtkbtsao13egn" path="res://scenes/characters/slime.tscn" id="1_fivl7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lali3"]
-size = Vector2(1005.5, 54)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4q8x3"]
+size = Vector2(2593.92, 96.13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufb2a"]
+size = Vector2(2609.78, 73.7487)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mvoy"]
+size = Vector2(105.19, 1514.04)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llx6j"]
+size = Vector2(97.2571, 1489.12)
 
 [node name="Arena1" type="Node2D"]
 
 [node name="Background1" parent="." instance=ExtResource("1_4q8x3")]
+visible = false
+position = Vector2(-2, -1)
+scale = Vector2(0.20988, 0.235433)
 
 [node name="Slime" parent="." instance=ExtResource("1_fivl7")]
-position = Vector2(177, 474)
+position = Vector2(46, 139)
 
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(532, 623)
+[node name="Area2DFloor" type="StaticBody2D" parent="."]
+position = Vector2(64, 166)
+scale = Vector2(0.126064, 0.125492)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(9, -1)
-shape = SubResource("RectangleShape2D_lali3")
+[node name="Floor" type="CollisionShape2D" parent="Area2DFloor"]
+position = Vector2(761.517, 151.404)
+shape = SubResource("RectangleShape2D_4q8x3")
+
+[node name="Roof" type="CollisionShape2D" parent="Area2DFloor"]
+position = Vector2(745.652, -1354.67)
+shape = SubResource("RectangleShape2D_ufb2a")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Area2DFloor"]
+position = Vector2(-563.205, -613.584)
+shape = SubResource("RectangleShape2D_5mvoy")
+
+[node name="RightWall" type="CollisionShape2D" parent="Area2DFloor"]
+position = Vector2(2078.31, -613.584)
+shape = SubResource("RectangleShape2D_llx6j")

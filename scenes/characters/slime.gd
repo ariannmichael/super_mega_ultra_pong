@@ -3,8 +3,9 @@ extends CharacterBody2D
 @onready var anim = $AnimationPlayer
 @onready var sprite = $Sprite2D
 @onready var attack_area = $Area2D
-var speed = 200
-var dash_speed = 800
+@onready var dash_particles = $GPUParticles2D
+var speed = 100
+var dash_speed = 400
 var attacking = false
 var dashing = false
 var jumping = false
@@ -31,6 +32,7 @@ func moveset_animation(_delta: float) -> void:
 
 	if dashing:
 		attack_area.scale.x = direction.x
+		dash_particles.scale.x = direction.x
 		velocity = direction.normalized() * dash_speed
 	else:
 		velocity = direction * speed
@@ -43,9 +45,6 @@ func moveset_animation(_delta: float) -> void:
 	elif direction.x < 0:
 		sprite.flip_h = true
 	anim.play(get_animation())
-
-func jump() -> void:
-	print("JUMP JUMP JUMP")
 
 func dash() -> void:
 	if direction != Vector2.ZERO:

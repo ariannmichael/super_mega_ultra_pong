@@ -1,16 +1,14 @@
 [remap]
 
-importer="aseprite.importer.tileset"
-type="TileSet"
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
 uid="uid://cn7vkmrbu3cty"
-path="res://.godot/imported/tileset.aseprite-a47b28ec5dfa8d671be4563836a0ff97.tres"
+path="res://.godot/imported/tileset.aseprite-a47b28ec5dfa8d671be4563836a0ff97.res"
 
 [deps]
 
-files=["res://.godot/imported/tileset.aseprite-a47b28ec5dfa8d671be4563836a0ff97.tres"]
-
 source_file="res://test/tileset.aseprite"
-dest_files=["res://.godot/imported/tileset.aseprite-a47b28ec5dfa8d671be4563836a0ff97.tres", "res://.godot/imported/tileset.aseprite-a47b28ec5dfa8d671be4563836a0ff97.tres"]
+dest_files=["res://.godot/imported/tileset.aseprite-a47b28ec5dfa8d671be4563836a0ff97.res"]
 
 [params]
 
