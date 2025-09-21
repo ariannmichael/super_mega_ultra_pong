@@ -8,3 +8,6 @@ func decrease(point):
 	if aux < 0:
 		aux = 0
 	$ProgressBar.value = aux
+	
+	if $ProgressBar.value == 0:
+		LevelManager.change_level(4)

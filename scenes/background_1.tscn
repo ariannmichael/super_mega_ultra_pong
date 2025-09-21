@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0w4pumdi8ixr"]
 
-[ext_resource type="VideoStream" uid="uid://c1qwcaxjsg4wb" path="res://assets/bg2.ogv" id="1_1niro"]
+[ext_resource type="VideoStream" path="res://assets/bg2.ogv" id="1_1niro"]
 
 [node name="Background1" type="Node2D"]
 

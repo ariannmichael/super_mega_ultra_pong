@@ -112,6 +112,7 @@ ok_button_text = " OK "
 dialog_text = "Press a key or a button"
 
 [node name="BackButton" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 24.0
