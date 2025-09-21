@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0csft8o76bxr"]
+
+[ext_resource type="Script" uid="uid://djds1rfhtmt7b" path="res://scenes/hp.gd" id="1_al052"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ha0u"]
+bg_color = Color(0.0814301, 0.18186, 0.0907576, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_al052"]
+bg_color = Color(0.119677, 0.620381, 0, 1)
+
+[node name="HP" type="Node2D"]
+scale = Vector2(2.02929, 0.301811)
+script = ExtResource("1_al052")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+scale = Vector2(39.44, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_4ha0u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_al052")
+value = 100.0
+rounded = true
+show_percentage = false

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1067hdlwhqmt"]
+[gd_scene load_steps=8 format=3 uid="uid://c1067hdlwhqmt"]
 
 [ext_resource type="Script" uid="uid://cg4o1wbbtfkfq" path="res://ui/title_screen.gd" id="1_qer0c"]
 [ext_resource type="Script" uid="uid://ed86qrryqk0e" path="res://ui/move_container.gd" id="2_dk6f0"]
 [ext_resource type="Texture2D" uid="uid://bg16vsrg6u4j3" path="res://assets/title3.png" id="2_qer0c"]
 [ext_resource type="Theme" uid="uid://bxs6rhi7i4gl6" path="res://resources/new_theme.tres" id="3_l1ku3"]
+[ext_resource type="AudioStream" uid="uid://c1a2vtsbxki56" path="res://assets/menu.wav" id="5_l1ku3"]
 
 [sub_resource type="Gradient" id="Gradient_dk6f0"]
 offsets = PackedFloat32Array(1)
@@ -77,6 +78,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_l1ku3")
 text = "CREDITS"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_l1ku3")
+autoplay = true
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ButtonsContainer/ButtonOptions" to="." method="_on_button_options_pressed"]

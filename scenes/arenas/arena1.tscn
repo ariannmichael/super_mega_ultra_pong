@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyn8tajqd5i5p"]
+[gd_scene load_steps=13 format=3 uid="uid://cyn8tajqd5i5p"]
 
 [ext_resource type="PackedScene" uid="uid://c0w4pumdi8ixr" path="res://scenes/background_1.tscn" id="1_4q8x3"]
 [ext_resource type="PackedScene" uid="uid://dtkbtsao13egn" path="res://scenes/characters/slime.tscn" id="1_fivl7"]
+[ext_resource type="Script" uid="uid://crhijj1dt1jg4" path="res://scenes/arenas/arena_1.gd" id="1_wx75d"]
 [ext_resource type="PackedScene" uid="uid://b22edg7vhr1en" path="res://scenes/characters/ball.tscn" id="3_ufb2a"]
+[ext_resource type="AudioStream" uid="uid://pnwip568vdfg" path="res://assets/track_2 muito acelerada corrigida.wav" id="6_qy5f4"]
+[ext_resource type="PackedScene" uid="uid://sggam6wjsx44" path="res://scenes/arena_timer.tscn" id="6_ssu25"]
+[ext_resource type="AudioStream" uid="uid://dchvbu3vj7dx0" path="res://assets/trackk ACELERADA.wav" id="6_wx75d"]
+[ext_resource type="PackedScene" uid="uid://b0csft8o76bxr" path="res://scenes/hp.tscn" id="7_qy5f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4q8x3"]
 size = Vector2(2593.92, 96.13)
@@ -17,11 +22,9 @@ size = Vector2(105.19, 1514.04)
 size = Vector2(97.2571, 1489.12)
 
 [node name="Arena1" type="Node2D"]
+script = ExtResource("1_wx75d")
 
 [node name="Background1" parent="." instance=ExtResource("1_4q8x3")]
-visible = false
-position = Vector2(-2, -1)
-scale = Vector2(0.20988, 0.235433)
 
 [node name="Slime" parent="." instance=ExtResource("1_fivl7")]
 position = Vector2(46, 139)
@@ -30,22 +33,53 @@ position = Vector2(46, 139)
 position = Vector2(64, 166)
 scale = Vector2(0.126064, 0.125492)
 collision_layer = 4
+collision_mask = 3
 
 [node name="Floor" type="CollisionShape2D" parent="Area2DFloor"]
 position = Vector2(761.517, 151.404)
 shape = SubResource("RectangleShape2D_4q8x3")
 
-[node name="Roof" type="CollisionShape2D" parent="Area2DFloor"]
-position = Vector2(745.652, -1354.67)
+[node name="Area2DRoof" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Roof" type="CollisionShape2D" parent="Area2DRoof"]
+position = Vector2(158, -4.00026)
+scale = Vector2(0.126064, 0.125492)
 shape = SubResource("RectangleShape2D_ufb2a")
 
-[node name="LeftWall" type="CollisionShape2D" parent="Area2DFloor"]
-position = Vector2(-563.205, -613.584)
+[node name="Area2DLeft" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="LeftWall" type="CollisionShape2D" parent="Area2DLeft"]
+position = Vector2(-6.99988, 89.0001)
+scale = Vector2(0.126064, 0.125492)
 shape = SubResource("RectangleShape2D_5mvoy")
 
-[node name="RightWall" type="CollisionShape2D" parent="Area2DFloor"]
-position = Vector2(2078.31, -613.584)
+[node name="Area2DRight" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="RightWall" type="CollisionShape2D" parent="Area2DRight"]
+position = Vector2(326, 89.0001)
+scale = Vector2(0.126064, 0.125492)
 shape = SubResource("RectangleShape2D_llx6j")
 
 [node name="Ball" parent="." instance=ExtResource("3_ufb2a")]
 position = Vector2(154, 90)
+initial_velocity = 15
+
+[node name="Track1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_wx75d")
+
+[node name="Track2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qy5f4")
+
+[node name="HP" parent="." instance=ExtResource("7_qy5f4")]
+
+[node name="ArenaTimer" parent="." instance=ExtResource("6_ssu25")]
+position = Vector2(146, 8)
+
+[connection signal="on_hit_wall" from="Ball" to="." method="_on_ball_on_hit_wall"]
+[connection signal="short_time_left" from="ArenaTimer" to="." method="_on_arena_timer_short_time_left"]

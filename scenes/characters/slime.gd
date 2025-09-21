@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var attack_area = $Area2D
 @onready var dash_particles = $GPUParticles2D
+
 var speed = 100
 var ball_force = 200
 var dash_speed = 400
@@ -76,6 +77,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is RigidBody2D:	
+	if body is RigidBody2D:
+		$AudioParry.play()
+		body.deflate()
 		body.apply_impulse(attack_area.scale.normalized() * ball_force)
 		

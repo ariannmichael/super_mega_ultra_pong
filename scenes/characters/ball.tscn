@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b22edg7vhr1en"]
+[gd_scene load_steps=12 format=3 uid="uid://b22edg7vhr1en"]
 
 [ext_resource type="Script" uid="uid://derat3kwk0t2b" path="res://scenes/characters/ball.gd" id="1_aca4o"]
 [ext_resource type="Texture2D" uid="uid://becm2oh2vqbfv" path="res://assets/Bouncing Ball Game Assets/BouncingBall.png" id="2_23c7g"]
+[ext_resource type="AudioStream" uid="uid://dtt0258bb37a7" path="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Torch/Torch Attack Strike 2.ogg" id="4_ljfoi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_otoc8"]
 friction = 0.0
@@ -38,9 +39,12 @@ radius = 26.0192
 
 [node name="Ball" type="RigidBody2D"]
 collision_layer = 2
-collision_mask = 6
+collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_otoc8")
 gravity_scale = 0.0
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 5
 linear_damp_mode = 1
 angular_damp_mode = 1
 script = ExtResource("1_aca4o")
@@ -57,3 +61,8 @@ process_material = SubResource("ParticleProcessMaterial_aca4o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_aca4o")
 debug_color = Color(0.69625, 0.494444, 0, 0.42)
+
+[node name="AudioWall" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ljfoi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

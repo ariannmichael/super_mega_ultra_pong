@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=4 uid="uid://dtkbtsao13egn"]
+[gd_scene load_steps=22 format=4 uid="uid://dtkbtsao13egn"]
 
 [ext_resource type="Script" uid="uid://d1lk3rltrqjlo" path="res://scenes/characters/slime.gd" id="1_k84ui"]
 [ext_resource type="Texture2D" uid="uid://cjf7hnhd67n1e" path="res://assets/Slime/Slime/Slime-Attack01.png" id="2_boxg1"]
 [ext_resource type="AudioStream" uid="uid://bqqdpu7hmq0l7" path="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Attacks/Sword Attacks Hits and Blocks/Sword Attack 2.ogg" id="3_gh1sf"]
 [ext_resource type="AudioStream" uid="uid://cpjuoljiccl2i" path="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Attacks/Sword Attacks Hits and Blocks/Sword Attack 3.ogg" id="4_72r5k"]
+[ext_resource type="AudioStream" uid="uid://dn57bbuamux1n" path="res://assets/Free Fantasy SFX Pack By TomMusic/OGG Files/SFX/Attacks/Sword Attacks Hits and Blocks/Sword Parry 1.ogg" id="5_72r5k"]
 
 [sub_resource type="Shader" id="Shader_boxg1"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.4.1.stable's CanvasItemMaterial.
@@ -320,7 +321,7 @@ size_override = Vector2(600, 600)
 size = Vector2(28, 19)
 
 [node name="Slime" type="CharacterBody2D"]
-collision_mask = 4
+collision_mask = 6
 script = ExtResource("1_k84ui")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -334,6 +335,7 @@ process_material = SubResource("ParticleProcessMaterial_gh1sf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6.5, -0.5)
 shape = SubResource("RectangleShape2D_k84ui")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
@@ -390,6 +392,9 @@ stream = ExtResource("3_gh1sf")
 
 [node name="AudioAttack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_72r5k")
+
+[node name="AudioParry" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_72r5k")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
